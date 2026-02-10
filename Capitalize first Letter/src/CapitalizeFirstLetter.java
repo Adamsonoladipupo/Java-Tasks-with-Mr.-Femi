@@ -11,9 +11,12 @@ public class CapitalizeFirstLetter {
                 char eachCharacter = sentence.charAt(check);
                 String letter = String.valueOf(eachCharacter);
                 if (sentence.charAt(check) == ' '){
+                    newString.append(" ");
                     eachCharacter = sentence.charAt(check+1);
                     letter = String.valueOf(eachCharacter).toUpperCase();
-                    newString.append(" ");
+                    newString.append(letter);
+                    check++;
+                    continue;
                 }
                 newString.append(letter);
             }
