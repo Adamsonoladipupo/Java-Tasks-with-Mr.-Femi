@@ -2,11 +2,20 @@ public class CapitalizeFirstLetter {
     public static String capitalizeFirstLetters(String sentence){
         StringBuilder newString = new StringBuilder();
         for (int check = 0; check < sentence.length(); check++){
-            char eachCharacter = sentence.charAt(check);
-            String letter = String.valueOf(eachCharacter).toUpperCase();
-            newString.append(letter);
-            if(eachCharacter == ' '){
-                
+            if(check == 0){
+                char firstLetter = sentence.charAt(check);
+                String capitalize = String.valueOf(firstLetter).toUpperCase();
+                newString.append(capitalize);
+            }
+            if(check > 0){
+                if (sentence.charAt(check) == ' '){
+                    char eachCharacter = sentence.charAt(check+1);
+                    String letter = String.valueOf(eachCharacter).toUpperCase();
+                    newString.append(letter);
+                }
+                char eachCharacter = sentence.charAt(check);
+                String letter = String.valueOf(eachCharacter);
+                newString.append(letter);
             }
         }
         return newString.toString();
