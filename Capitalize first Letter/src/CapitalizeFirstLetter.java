@@ -8,13 +8,13 @@ public class CapitalizeFirstLetter {
                 newString.append(capitalize);
             }
             if(check > 0){
-                if (sentence.charAt(check) == ' '){
-                    char eachCharacter = sentence.charAt(check+1);
-                    String letter = String.valueOf(eachCharacter).toUpperCase();
-                    newString.append(letter);
-                }
                 char eachCharacter = sentence.charAt(check);
                 String letter = String.valueOf(eachCharacter);
+                if (sentence.charAt(check) == ' '){
+                    eachCharacter = sentence.charAt(check+1);
+                    letter = String.valueOf(eachCharacter).toUpperCase();
+                    newString.append(" ");
+                }
                 newString.append(letter);
             }
         }
@@ -22,7 +22,6 @@ public class CapitalizeFirstLetter {
     }
     public static void main(String[] args){
         String string = "this is a tree";
-        String result = capitalizeFirstLetters(string);
-        System.out.println(result);
+        System.out.println(capitalizeFirstLetters(string));
     }
 }
